@@ -32,7 +32,7 @@ print_help() {
     echo "  -h            Show this help message"
 }
 
-# --- Spracovanie argumentov ---
+
 USE_GOOGLE_DORKING=false
 USE_JS_DISCOVERY=false
 
@@ -49,7 +49,6 @@ while getopts ":d:gjh" opt; do
 done
 if [[ -z "$DOMAIN" ]]; then echo -e "${RED}Error: No domain provided.${NC}"; print_help; exit 1; fi
 
-# --- Hlavná časť skriptu ---
 print_banner
 echo -e "${CYAN}[*] Starting subdomain enumeration for: ${YELLOW}$DOMAIN${NC}"
 mkdir -p results
@@ -61,7 +60,6 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 SGOO_SCRIPT_PATH="$SCRIPT_DIR/tools/sd-goo/sd-goo.sh"
 PYTHON_BOT_PATH="$SCRIPT_DIR/GoogleBot.py"
 
-# --- Funkcia na spustenie nástroja a spočítanie výsledkov ---
 run_and_count() {
     local cmd="$1"
     local label="$2"
@@ -72,7 +70,6 @@ run_and_count() {
     printf "${GREEN}[*] %-18s:${NC} %s\n" "$label" "$count"
 }
 
-# --- Spustenie jednotlivých nástrojov ---
 if [ "$USE_GOOGLE_DORKING" = true ]; then
     VENV_DIR="$SCRIPT_DIR/venv"
     VENV_PYTHON="$VENV_DIR/bin/python3"
