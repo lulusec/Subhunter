@@ -18,23 +18,18 @@ RECOMMENDED_PROVIDERS = ["chaos", "virustotal", "c99", "zoomeyeapi", "zoomeye", 
 OTHER_PROVIDERS = sorted([p for p in ALL_PROVIDERS if p not in RECOMMENDED_PROVIDERS])
 
 
-# --- DEFINITÍVNE RIEŠENIE PRE FORMÁTOVANIE YAML ---
 
-# 1. Vytvoríme si vlastnú triedu Dumper, ktorá dedí od SafeDumper
 class MyDumper(yaml.SafeDumper):
     pass
 
-# 2. Vytvoríme funkciu, ktorá povie, ako presne formátovať zoznam (list)
 def flow_style_list_representer(dumper, data):
     """Táto funkcia prinúti YAML použiť flow style ([...]) pre zoznamy."""
     return dumper.represent_sequence('tag:yaml.org,2002:seq', data, flow_style=True)
 
-# 3. Zaregistrujeme našu funkciu pre dátový typ 'list' v našom Dumperi.
-# Toto je kľúčový krok: "Vždy, keď narazíš na 'list', použi túto funkciu."
+
 MyDumper.add_representer(list, flow_style_list_representer)
 
 
-# --- LOGIKA APLIKÁCIE ---
 
 def load_keys_from_file():
     if not os.path.exists(CONFIG_PATH):
@@ -62,7 +57,6 @@ def save_keys_to_file():
     try:
         os.makedirs(os.path.dirname(CONFIG_PATH), exist_ok=True)
         with open(CONFIG_PATH, 'w') as f:
-            # Použijeme náš vlastný, nakonfigurovaný MyDumper
             yaml.dump(new_config, f, Dumper=MyDumper, indent=4, sort_keys=False)
         messagebox.showinfo("Úspech", "Kľúče boli úspešne uložené!")
     except Exception as e:
@@ -75,7 +69,6 @@ def populate_ui_with_keys():
             entry_widget.insert(0, existing_keys[provider][0])
 
 
-# --- GRAFICKÉ ROZHRANIE (UI) - bez zmien ---
 
 BG_COLOR = "#1e1e1e"
 FG_COLOR = "#d4d4d4"
