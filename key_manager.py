@@ -142,10 +142,10 @@ def create_section(title, providers):
         provider_entries[provider_name] = entry
         current_row += 1
 
-create_section("--- Odporúčané ---", RECOMMENDED_PROVIDERS)
-create_section("--- Ostatné ---", OTHER_PROVIDERS)
+create_section("--- Recommended ---", RECOMMENDED_PROVIDERS)
+create_section("--- Others ---", OTHER_PROVIDERS)
 
-save_button = ttk.Button(root, text="Uložiť kľúče", style='Save.TButton', command=save_keys_to_file)
+save_button = ttk.Button(root, text="Save Keys", style='Save.TButton', command=save_keys_to_file)
 save_button.pack(pady=25)
 
 populate_ui_with_keys()
