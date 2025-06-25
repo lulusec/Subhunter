@@ -4,14 +4,14 @@ This script performs  subdomain enumeration for a specified domain using multipl
 ![ChatGPT Image Jun 25, 2025, 03_38_34 PM](https://github.com/user-attachments/assets/6bc40724-ad16-4d8a-a1dc-848383d29ca2)
 
 
-## Inštalácia:
+## Installation:
 ```
 git clone https://github.com/lulusec/Subhunter-v1/
 cd Subhunter-v1
 bash install.sh
 ```
 
-## Použitie:
+## Usage:
 ```
 chmod +x SubHunter.sh
 ./SubHunter.sh -d example.com -g -j
