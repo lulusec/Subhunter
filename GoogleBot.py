@@ -9,7 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Funkcia na vypisovanie stavu na chybový výstup (stderr), aby nerušila hlavný výstup
+
 def log_status(message):
     print(message, file=sys.stderr)
 
@@ -18,14 +18,14 @@ def human_like_typing(element, text):
         element.send_keys(char)
         time.sleep(random.uniform(0.05, 0.2))
 
-# --- NASTAVENIA PRE MASKAROVANIE BOTA ---
+
 options = Options()
 user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
 options.add_argument(f'user-agent={user_agent}')
 options.add_argument("--disable-blink-features=AutomationControlled")
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
-options.add_argument("--headless") # Dôležité pre beh na pozadí
+options.add_argument("--headless") 
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 
@@ -63,12 +63,12 @@ try:
     )
     log_status("Výsledky sa načítali.")
 
-    # Získanie cookies a formátovanie pre výstup
+
     cookies = driver.get_cookies()
     cookie_parts = [f"{cookie['name']}={cookie['value']}" for cookie in cookies]
     final_cookie_header = f"Cookie: {'; '.join(cookie_parts)}"
 
-    # Vytlačíme IBA finálny reťazec na štandardný výstup. Toto zachytí Bash.
+   
     print(final_cookie_header)
 
 finally:
