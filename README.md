@@ -27,7 +27,7 @@ chmod +x SubHunter.sh
 | -j   | Subdomain discovery from JavaScript files on live hosts (active enumeration)    | `./SubHunter.sh -d example.com -j`              |
 | -h   | Show this help message                              | `./SubHunter.sh -h`              |
 
-## API klúče
+## API keys
 ```
 python key_manager.py
 ```
