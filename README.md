@@ -1,8 +1,10 @@
 # SubHunter
 This script performs  subdomain enumeration for a specified domain using multiple tools such as Amass, Subfinder, Assetfinder, Findomain, gau, and others. By combining these sources, it maximizes subdomain coverage from publicly available information (OSINT). The script collects the outputs, removes duplicates, and generates a unified list for further analysis.
 
-![ChatGPT Image Jun 25, 2025, 03_38_34 PM](https://github.com/user-attachments/assets/6bc40724-ad16-4d8a-a1dc-848383d29ca2)
 
+<p align="center">
+ <img src="https://github.com/user-attachments/assets/6bc40724-ad16-4d8a-a1dc-848383d29ca2" alt="image">
+</p>
 
 ## Installation:
 ```
