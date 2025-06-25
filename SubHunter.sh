@@ -16,7 +16,7 @@ cat << "EOF"
  \___ \| | | |  _ \| |_| | | | |  \| | | | |  _| | |_) |
   ___) | |_| | |_) |  _  | |_| | |\  | | | | |___|  _ < 
  |____/ \___/|____/|_| |_|\___/|_| \_| |_| |_____|_| \_\                                                        
-           Passive Subdomain Enumeration Tool
+               Subdomain Enumeration Tool
 EOF
 echo ""
 }
