@@ -28,7 +28,7 @@ print_help() {
     echo -e "${YELLOW}Options:${NC}"
     echo "  -d <domain>   Target domain to enumerate subdomains"
     echo "  -g            Use Google Dorking with auto-generated cookies (optional)"
-    echo "  -j            Perform JS subdomain discovery on live hosts (optional, requires httprobe & jsubfinder)"
+    echo "  -j            Perform JS subdomain discovery on live hosts (optional"
     echo "  -h            Show this help message"
 }
 
