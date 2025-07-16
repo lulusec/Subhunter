@@ -9,7 +9,7 @@ This script performs  subdomain enumeration for a specified domain using multipl
 ## Installation:
 ```
 git clone https://github.com/lulusec/Subhunter/
-cd Subhunter-v1
+cd Subhunter
 bash install.sh
 ```
 
